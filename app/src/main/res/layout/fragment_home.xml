@@ -4,19 +4,63 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
+    android:background="@drawable/expenseimage"
+    android:backgroundTint="@color/material_dynamic_primary20"
+    android:backgroundTintMode="screen"
+    tools:context=".ui.menu.HomeFragment">
 
-    <TextView
-        android:id="@+id/text_home"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+    <Button
+        android:id="@+id/menu_button"
+        android:layout_width="221dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="625dp"
+        android:layout_marginEnd="130dp"
+        android:layout_marginBottom="58dp"
+        android:background="@drawable/gradient_drawable"
+        android:drawableEnd="@drawable/baseline_arrow_forward_24"
+        android:drawablePadding="@dimen/cardview_compat_inset_shadow"
+        android:gravity="center"
+        android:paddingStart="@dimen/padding_menu_button"
+        android:paddingEnd="@dimen/padding_menu_button"
+        android:text="@string/start_saving"
         android:textAlignment="center"
+        android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginBottom="424dp"
+        android:backgroundTintMode="add"
+        android:src="@drawable/app_title"
+        app:layout_constraintBottom_toTopOf="@+id/menu_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="86dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="86dp"
+        android:layout_marginBottom="374dp"
+        android:gravity="center"
+        android:text="@string/menu_screen_text"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/menu_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
