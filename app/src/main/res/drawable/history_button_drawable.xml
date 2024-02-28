@@ -3,10 +3,12 @@
     android:innerRadius="@dimen/activity_button_corner_radius"
     xmlns:android = "http://schemas.android.com/apk/res/android" >
     <gradient
-        android:startColor="#38ACD6"
-        android:centerColor="#38ACD6"
-        android:endColor="#00668b"
+        android:startColor="#71EAD2"
+        android:centerColor="#71EAD2"
+        android:endColor="#38ACD6"
         android:angle="360" />
 
+
     <corners android:radius="@dimen/activity_button_corner_radius"/>
+
 </shape>
