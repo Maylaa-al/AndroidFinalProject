@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_drawable_app_background_screen"
+    tools:context=".ui.statistics.StatisticsFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="167dp"
+        android:layout_height="53dp"
+        android:layout_marginEnd="250dp"
+        android:layout_marginBottom="668dp"
+        android:background="@color/material_on_background_disabled"
+        android:drawableStart="@drawable/baseline_keyboard_arrow_left_24"
+        android:paddingStart="10dp"
+        android:paddingEnd="30dp"
+        android:text="@string/statistics_button"
+        android:textAlignment="center"
+        android:textColor="#F9FBE7"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/frameLayoutLineGraph"
+        android:layout_width="335dp"
+        android:layout_height="393dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/linegraph_background_statistics"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayoutCardView">
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/frameLayoutCardView"
+        android:layout_width="339dp"
+        android:layout_height="171dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/rectangle_background_statistics"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayoutLineGraph"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button">
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="33dp"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/history_button_drawable"
+            android:text="@string/history_button"
+            android:textColor="#FFFFFF" />
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
