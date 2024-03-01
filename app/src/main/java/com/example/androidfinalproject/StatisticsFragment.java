@@ -1,4 +1,4 @@
-package com.example.androidfinalproject.ui.statistics;
+package com.example.androidfinalproject;
 
 import android.os.Bundle;
 

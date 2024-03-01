@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_drawable_app_background_screen"
-    tools:context=".ui.statistics.StatisticsFragment">
+    tools:context=".StatisticsFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
