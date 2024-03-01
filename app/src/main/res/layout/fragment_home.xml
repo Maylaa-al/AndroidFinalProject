@@ -10,14 +10,14 @@
     tools:context=".ui.menu.HomeFragment">
 
     <Button
-        android:id="@+id/menu_button"
+        android:id="@+id/start_button"
         android:layout_width="250dp"
         android:layout_height="47dp"
         android:layout_marginStart="130dp"
         android:layout_marginTop="625dp"
         android:layout_marginEnd="130dp"
         android:layout_marginBottom="58dp"
-        android:background="@drawable/gradient_drawable"
+        android:background="@drawable/button_gradient"
         android:drawableEnd="@drawable/baseline_arrow_forward_24"
         android:drawablePadding="@dimen/cardview_compat_inset_shadow"
         android:gravity="center"
@@ -41,7 +41,7 @@
         android:layout_marginBottom="424dp"
         android:backgroundTintMode="add"
         android:src="@drawable/app_title"
-        app:layout_constraintBottom_toTopOf="@+id/menu_button"
+        app:layout_constraintBottom_toTopOf="@+id/start_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -59,7 +59,7 @@
         android:textColor="#FFFFFF"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/menu_button"
+        app:layout_constraintBottom_toTopOf="@+id/start_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
