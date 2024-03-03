@@ -16,7 +16,7 @@
 
     <style name="BlueTheme.AndroidFinalProject" parent="Theme.AppCompat.DayNight.DarkActionBar">
     <!-- Primary brand color. -->
-    <item name="colorPrimary">#38ACD6</item>
+    <item name="colorPrimary">#AAFFC107</item>
     <item name="colorPrimaryVariant">@color/material_dynamic_neutral_variant30</item>:[\p  bvc
     <item name="colorOnPrimary">@color/white</item>
     <!-- Secondary brand color. -->
