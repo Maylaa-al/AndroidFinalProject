@@ -20,6 +20,7 @@
         android:background="@drawable/button_gradient"
         android:drawableEnd="@drawable/baseline_arrow_forward_24"
         android:drawablePadding="@dimen/cardview_compat_inset_shadow"
+        android:fontFamily="@font/acme"
         android:gravity="center"
         android:paddingStart="@dimen/padding_menu_button"
         android:paddingEnd="@dimen/padding_menu_button"
