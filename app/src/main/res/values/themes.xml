@@ -13,4 +13,19 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="BlueTheme.AndroidFinalProject" parent="Theme.AppCompat.DayNight.DarkActionBar">
+    <!-- Primary brand color. -->
+    <item name="colorPrimary">#38ACD6</item>
+    <item name="colorPrimaryVariant">@color/material_dynamic_neutral_variant30</item>:[\p  bvc
+    <item name="colorOnPrimary">@color/white</item>
+    <!-- Secondary brand color. -->
+    <item name="colorSecondary">@color/teal_200</item>
+    <item name="colorSecondaryVariant">@color/teal_700</item>
+    <item name="colorOnSecondary">@color/black</item>
+    <!-- Status bar color. -->
+    <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+    <!-- Customize your theme here. -->
+</style>
+
 </resources>
