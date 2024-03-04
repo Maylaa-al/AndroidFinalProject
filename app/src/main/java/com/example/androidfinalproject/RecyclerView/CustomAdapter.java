@@ -33,8 +33,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
     }
 
     @Override
-    //TODO: add code here for the recyclerView layout
     public void onBindViewHolder(@NonNull CustomViewHolder holder, int position) {
+        //TODO: add code here for the recyclerView layout
         Budget budget = budgets.get(position);
     }
 
@@ -46,6 +46,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
     public class CustomViewHolder extends RecyclerView.ViewHolder {
         public CustomViewHolder(@NonNull View itemView) {
             super(itemView);
+            //TODO: add code here for the recyclerView layout
         }
     }
 }
