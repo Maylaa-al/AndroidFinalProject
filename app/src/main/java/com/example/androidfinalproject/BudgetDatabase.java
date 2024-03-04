@@ -17,12 +17,13 @@ public class BudgetDatabase extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "budgetdatabase";
     public static final String TABLE_BUDGET = "budgetexpense";
     public static final String COLUMN_ID = "id";
+    public static final String COLUMN_PRICE = "price";
     public static final String COLUMN_CURRENCY = "currency";
 
 
     public static final String CREATE_TABLE_BUDGET_EXPENSE = "CREATE TABLE " +
             TABLE_BUDGET + " (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-            COLUMN_CURRENCY + " TEXT, ";
+            COLUMN_PRICE + " DOUBLE, " + COLUMN_CURRENCY + " TEXT, ";
             //todo: create table here
 
     public BudgetDatabase(Context context) {
@@ -43,6 +44,7 @@ public class BudgetDatabase extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         //TODO: add code here to match the contructor
+        values.put(COLUMN_PRICE, budgetExpense.getPrice());
         values.put(COLUMN_CURRENCY, budgetExpense.getCurrency());
         db.insert(TABLE_BUDGET, null, values);
         db.close();
@@ -53,7 +55,7 @@ public class BudgetDatabase extends SQLiteOpenHelper {
     public Budget budget(int id){
         SQLiteDatabase db = this.getReadableDatabase();
         Budget budget = null;
-        Cursor cursor = db.query(TABLE_BUDGET, new String[]{ COLUMN_ID, COLUMN_CURRENCY},COLUMN_ID + "= ?",
+        Cursor cursor = db.query(TABLE_BUDGET, new String[]{COLUMN_ID, COLUMN_PRICE, COLUMN_CURRENCY},COLUMN_ID + "= ?",
                 new String[]{String.valueOf(id)}, null, null, null);
         if(cursor.moveToFirst()) {
             budget = new
@@ -85,6 +87,7 @@ public class BudgetDatabase extends SQLiteOpenHelper {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues values = new ContentValues();
         //TODO: add code here to match the contructor
+        values.put(COLUMN_PRICE, budgetExpense.getPrice());
         values.put(COLUMN_CURRENCY, budgetExpense.getCurrency());
         db.update(TABLE_BUDGET, values, COLUMN_ID + "=?",
                 new String[]{String.valueOf(budgetExpense.getId())});

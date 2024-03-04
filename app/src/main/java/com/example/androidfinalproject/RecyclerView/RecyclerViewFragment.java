@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.androidfinalproject.BudgetDatabase;
 import com.example.androidfinalproject.R;
 
 /**
@@ -61,6 +62,9 @@ public class RecyclerViewFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_recycler_view, container, false);
+        View view = inflater.inflate(R.layout.fragment_recycler_view, container, false);
+        BudgetDatabase db = new BudgetDatabase(getContext());
+        //TODO: add code here for RecyclerView
+        return view;
     }
 }

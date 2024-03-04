@@ -10,4 +10,5 @@
     <string name="statistics_button">Statistics</string>
     <string name="history_button">History</string>
     <string name="my_spend_button">My Spend</string>
+    <string name="column_currency_hint">Enter The Currency Type</string>
 </resources>
