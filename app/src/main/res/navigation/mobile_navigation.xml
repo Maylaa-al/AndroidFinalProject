@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_myspend">
 
     <fragment
         android:id="@+id/navigation_home"
@@ -22,8 +22,8 @@
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.androidfinalproject.ui.notifications.NotificationsFragment"
+        android:id="@+id/navigation_myspend"
+        android:name="com.example.androidfinalproject.MySpendFragment"
         android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_my_spend" />
 </navigation>

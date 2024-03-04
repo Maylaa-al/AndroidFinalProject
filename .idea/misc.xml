@@ -3,7 +3,16 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/tsh86/Documents/Android3/AndroidProject/AndroidFinalProject/app/src/main/res/drawable-v24/button_gradient.xml" value="0.1" />
-        <entry key="..\:/Users/tsh86/Documents/Android3/AndroidProject/AndroidFinalProject/app/src/main/res/layout/activity_main.xml" value="0.15384615384615385" />
+        <entry key="..\:/Users/tsh86/Documents/Android3/AndroidProject/AndroidFinalProject/app/src/main/res/drawable-v24/rounded_corners.xml" value="0.136" />
+        <entry key="..\:/Users/tsh86/Documents/Android3/AndroidProject/AndroidFinalProject/app/src/main/res/drawable-v24/rounded_corners_button.xml" value="0.13" />
+        <entry key="..\:/Users/tsh86/Documents/Android3/AndroidProject/AndroidFinalProject/app/src/main/res/drawable-v24/rounded_corners_flag.xml" value="0.1055" />
+        <entry key="..\:/Users/tsh86/Documents/Android3/AndroidProject/AndroidFinalProject/app/src/main/res/drawable-v24/theme_gradient.xml" value="0.2515" />
+        <entry key="..\:/Users/tsh86/Documents/Android3/AndroidProject/AndroidFinalProject/app/src/main/res/drawable/fragment_background.xml" value="0.136" />
+        <entry key="..\:/Users/tsh86/Documents/Android3/AndroidProject/AndroidFinalProject/app/src/main/res/drawable/gradient_drawable.xml" value="0.136" />
+        <entry key="..\:/Users/tsh86/Documents/Android3/AndroidProject/AndroidFinalProject/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/tsh86/Documents/Android3/AndroidProject/AndroidFinalProject/app/src/main/res/layout/fragment_dashboard.xml" value="0.33" />
+        <entry key="..\:/Users/tsh86/Documents/Android3/AndroidProject/AndroidFinalProject/app/src/main/res/layout/fragment_home.xml" value="0.5" />
+        <entry key="..\:/Users/tsh86/Documents/Android3/AndroidProject/AndroidFinalProject/app/src/main/res/layout/fragment_statistics.xml" value="0.25" />
         <entry key="..\:/Users/tsh86/Documents/Android3/AndroidProject/AndroidFinalProject/app/src/main/res/menu/bottom_nav_menu.xml" value="0.38058252427184464" />
       </map>
     </option>

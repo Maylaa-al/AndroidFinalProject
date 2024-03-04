@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape android:shape="rectangle"
+    android:innerRadius="@dimen/activity_button_corner_radius"
+    xmlns:android = "http://schemas.android.com/apk/res/android" >
+    <gradient
+        android:type="linear"
+        android:startColor="#38ACD6"
+        android:endColor="#2A4B93"
+        android:angle="80"/>
+
+</shape>
