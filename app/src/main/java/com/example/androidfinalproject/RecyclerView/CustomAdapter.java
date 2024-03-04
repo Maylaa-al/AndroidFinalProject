@@ -1,18 +1,20 @@
 package com.example.androidfinalproject.RecyclerView;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.androidfinalproject.R;
 import com.example.androidfinalproject.ui.Pojo.Budget;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-public class CustomAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomViewHolder> {
 
     private Context context;
 
@@ -26,12 +28,13 @@ public class CustomAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     @NonNull
     @Override
     public CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        //TODO: add code here for the recyclerView layout
-        return null;
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_recycler_view, parent, false);
+        return new CustomViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+    //TODO: add code here for the recyclerView layout
+    public void onBindViewHolder(@NonNull CustomViewHolder holder, int position) {
         Budget budget = budgets.get(position);
     }
 
