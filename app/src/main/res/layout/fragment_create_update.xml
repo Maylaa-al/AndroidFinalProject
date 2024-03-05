@@ -8,7 +8,7 @@
     tools:context=".CreateUpdateFragment">
 
     <EditText
-        android:id="@+id/column_currency"
+        android:id="@+id/currency_Editext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="fill_horizontal"
@@ -18,7 +18,7 @@
         android:text="@string/column_currency_hint" />
 
     <Button
-        android:id="@+id/submitButton"
+        android:id="@+id/submit_Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_columnSpan="2"
