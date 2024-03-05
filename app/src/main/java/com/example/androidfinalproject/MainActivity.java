@@ -5,8 +5,11 @@ import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
+import androidx.navigation.NavDestination;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
@@ -15,6 +18,8 @@ import com.example.androidfinalproject.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
+
+    private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
     private BottomNavigationView bottomNavigationView;
 
@@ -26,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        bottomNavigationView = findViewById(R.id.nav_view);
+        bottomNavigationView = findViewById(R.id.nav_View);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
@@ -38,6 +43,18 @@ public class MainActivity extends AppCompatActivity {
 
         // Hide bottom navigation initially when the activity start
         showBottomNavigation(false);
+
+        navController.addOnDestinationChangedListener(new NavController.OnDestinationChangedListener() {
+            @Override
+            public void onDestinationChanged(@NonNull NavController controller, @NonNull NavDestination destination, @Nullable Bundle arguments) {
+                if(destination.getId() == R.id.navigation_home){
+                    binding.fab.hide();
+                }
+                else{
+                    binding.fab.show();
+                }
+            }
+        });
     }
 
     public void showBottomNavigation(boolean show) {

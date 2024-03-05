@@ -4,12 +4,12 @@ plugins {
 
 android {
     namespace = "com.example.androidfinalproject"
-    compileSdk = 32
+    compileSdk = 33
 
     defaultConfig {
         applicationId = "com.example.androidfinalproject"
         minSdk = 23
-        targetSdk = 32
+        targetSdk = 33
         versionCode = 1
         versionName = "1.0"
 
@@ -32,7 +32,6 @@ android {
 }
 
 dependencies {
-
     implementation("com.android.volley:volley:1.2.1")
     implementation("androidx.appcompat:appcompat:1.5.1")
     implementation("com.google.android.material:material:1.9.0")

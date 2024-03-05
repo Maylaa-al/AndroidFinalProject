@@ -44,7 +44,7 @@ public class BudgetDatabase extends SQLiteOpenHelper {
 
     }
 
-    public void addComponent(Budget budgetExpense) {
+    public void addBudgetExpense(Budget budgetExpense) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         //TODO: add code here to match the contructor
@@ -93,7 +93,7 @@ public class BudgetDatabase extends SQLiteOpenHelper {
         return budgetExpense;
     }
 
-    public void updateComponent(Budget budgetExpense) {
+    public void updateBudgetExpense(Budget budgetExpense) {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues values = new ContentValues();
         //TODO: add code here to match the contructor

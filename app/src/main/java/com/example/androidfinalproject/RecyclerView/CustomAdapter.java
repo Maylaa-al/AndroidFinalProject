@@ -1,6 +1,7 @@
 package com.example.androidfinalproject.RecyclerView;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,8 +9,17 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.example.androidfinalproject.BudgetDatabase;
 import com.example.androidfinalproject.R;
+import com.example.androidfinalproject.api.CurrencySingleton;
 import com.example.androidfinalproject.ui.Pojo.Budget;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -43,6 +53,28 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
                 "&amount=" + budget.getPrice() +
                 "&format=1" +
                 "&date=" + budget.getDate();
+
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            JSONObject mainObject = response.getJSONObject("");
+                            BudgetDatabase db = new BudgetDatabase(context);
+                            db.updateBudgetExpense(budget);
+                            db.close();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.d("VOLLEY_ERROR", error.getLocalizedMessage());
+                    }
+                });
+        CurrencySingleton.getInstance(context).getRequestQueue().add(request);
     }
 
     @Override
