@@ -41,8 +41,25 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
+        // Change the fab button image
+        binding.fab.setImageResource(R.drawable.dollarsign);
+
+        // Go to AddTo fragment
+        binding.fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.navigation_addTo);
+
+            }
+        });
+
         // Hide bottom navigation initially when the activity start
         showBottomNavigation(false);
+
+
+
+
+
 
         navController.addOnDestinationChangedListener(new NavController.OnDestinationChangedListener() {
             @Override
