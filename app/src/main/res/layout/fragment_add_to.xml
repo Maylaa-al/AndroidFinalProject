@@ -9,7 +9,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:paddingBottom="100dp"
         tools:ignore="SpeakableTextPresentCheck">
 
@@ -22,8 +22,8 @@
                 android:id="@+id/cardView3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="50dp"
                 android:layout_marginStart="30dp"
+                android:layout_marginTop="50dp"
                 android:layout_marginEnd="30dp"
                 app:cardBackgroundColor="#25447B"
                 app:cardCornerRadius="20dp"
@@ -64,12 +64,12 @@
                                 android:id="@+id/editTextDate"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1"
                                 android:layout_marginEnd="10dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#496E94"
                                 android:ems="10"
                                 android:inputType="date"
-                                android:textColor="@color/white"
-                                android:backgroundTint="#496E94" />
+                                android:textColor="@color/white" />
 
                         </LinearLayout>
 
@@ -95,10 +95,10 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginEnd="10dp"
                                 android:layout_weight="1"
+                                android:backgroundTint="#496E94"
                                 android:ems="10"
                                 android:inputType="textPersonName"
-                                android:textColor="@color/white"
-                                android:backgroundTint="#496E94" />
+                                android:textColor="@color/white" />
 
                         </LinearLayout>
 
@@ -125,8 +125,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginEnd="10dp"
                                 android:layout_weight="1"
-                                android:textColor="@color/white"
-                                android:backgroundTint="#7DDDFF"/>
+                                android:backgroundTint="#7DDDFF"
+                                android:textColor="@color/white" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -152,10 +152,10 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginEnd="10dp"
                                 android:layout_weight="1"
+                                android:backgroundTint="#496E94"
                                 android:ems="10"
                                 android:inputType="number"
-                                android:textColor="@color/white"
-                                android:backgroundTint="#496E94"/>
+                                android:textColor="@color/white" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -181,11 +181,11 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginEnd="10dp"
                                 android:layout_weight="1"
+                                android:backgroundTint="#496E94"
                                 android:ems="10"
                                 android:gravity="start|top"
                                 android:inputType="textMultiLine"
-                                android:textColor="@color/white"
-                                android:backgroundTint="#496E94"/>
+                                android:textColor="@color/white" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -193,6 +193,31 @@
             </androidx.cardview.widget.CardView>
 
         </LinearLayout>
+
     </ScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/save"
+            android:layout_width="250dp"
+            android:layout_height="47dp"
+            android:layout_marginStart="130dp"
+            android:layout_marginEnd="130dp"
+            android:layout_marginBottom="124dp"
+            android:background="@drawable/button_gradient"
+            android:fontFamily="@font/acme"
+            android:gravity="center"
+            android:text="Save"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.505"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
