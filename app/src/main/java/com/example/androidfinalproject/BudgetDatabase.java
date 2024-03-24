@@ -32,7 +32,8 @@ public class BudgetDatabase extends SQLiteOpenHelper {
         // Create Categories table
     private static final String CREATE_TABLE_CATEGORIES = "CREATE TABLE " + TABLE_CATEGORIES +
                 "(" +
-                COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT" +
+                COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                COLUMN_CAT_NAME + " TEXT NOT NULL" +
                 ")";
 
     // Transactions table
@@ -43,7 +44,7 @@ public class BudgetDatabase extends SQLiteOpenHelper {
     public static final String COLUMN_NOTES = "notes";
         // Create transactions table
     private static final String CREATE_TABLE_TRANSACTIONS = "CREATE TABLE " + TABLE_TRANSACTIONS + "(" +
-                COLUMN_ID + "INTEGER PRIMARY KEY AUTOINCREMENT," +
+                COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                 COLUMN_DATE + " TEXT," +
                 COLUMN_ACCOUNT_NUM + " TEXT," + // Reference to Account Number
                 COLUMN_CAT_NAME + " TEXT," +
@@ -61,8 +62,6 @@ public class BudgetDatabase extends SQLiteOpenHelper {
                 ")";
 
 
-
-
 //    public static final String CREATE_TABLE_BUDGET_EXPENSE = "CREATE TABLE " +
 //            TABLE_BUDGET + " (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
 //            COLUMN_PRICE + " DOUBLE, " + COLUMN_CURRENCY_FROM + " TEXT, " +
@@ -76,6 +75,8 @@ public class BudgetDatabase extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         // Create the required tables
+        Log.d("BudgetDatabase", "onCreate method called"); // Add this line
+
         db.execSQL(CREATE_TABLE_CATEGORIES);
         db.execSQL(CREATE_TABLE_TRANSACTIONS);
         db.execSQL(CREATE_TABLE_ACCOUNTS);
@@ -102,7 +103,7 @@ public class BudgetDatabase extends SQLiteOpenHelper {
         values.put("notes", budgetExpense.getNotes());
         db.insert(TABLE_TRANSACTIONS, null, values);
 
-        db.close();
+        //db.close();
         Log.d("SQL", "Component added");
 
     }
@@ -123,7 +124,7 @@ public class BudgetDatabase extends SQLiteOpenHelper {
                            cursor.getString(5));
                            //TODO: add more code here to match the constructor
         }
-        db.close();
+       // db.close();
         return budget;
     }
 
@@ -141,7 +142,7 @@ public class BudgetDatabase extends SQLiteOpenHelper {
                            cursor.getString(5)));
                            //TODO: add more code here to match the constructor
         }
-        db.close();
+       // db.close();
         return budgetExpense;
     }
 
@@ -162,6 +163,6 @@ public class BudgetDatabase extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TABLE_TRANSACTIONS, COLUMN_ID + "=?",
                 new String[]{String.valueOf(budgetExpense)});
-        db.close();
+        //db.close();
     }
 }

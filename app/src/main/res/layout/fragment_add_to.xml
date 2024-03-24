@@ -90,7 +90,7 @@
                                 app:fontFamily="@font/acme" />
 
                             <EditText
-                                android:id="@+id/editTextTextPersonName2"
+                                android:id="@+id/account_num"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginEnd="10dp"
@@ -147,7 +147,7 @@
                                 app:fontFamily="@font/acme" />
 
                             <EditText
-                                android:id="@+id/editTextNumber"
+                                android:id="@+id/amount"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginEnd="10dp"
@@ -176,7 +176,7 @@
                                 app:fontFamily="@font/acme" />
 
                             <EditText
-                                android:id="@+id/editTextTextMultiLine"
+                                android:id="@+id/notes"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginEnd="10dp"

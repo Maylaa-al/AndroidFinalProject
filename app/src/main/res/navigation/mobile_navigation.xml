@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@id/navigation_home">
 
     <fragment
         android:id="@+id/navigation_home"
@@ -17,23 +17,32 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.example.androidfinalproject.ui.dashboard.DashboardFragment"
+        android:name="com.example.androidfinalproject.DashboardFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_navigation_dashboard_to_categoryFragment"
+            app:destination="@id/categoryFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_myspend"
         android:name="com.example.androidfinalproject.MySpendFragment"
         android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_my_spend" >
-        <action
-            android:id="@+id/action_navigation_myspend_to_navigation_addTo"
-            app:destination="@id/navigation_addTo" />
-    </fragment>
+        tools:layout="@layout/fragment_my_spend" />
 
     <fragment
         android:id="@+id/navigation_addTo"
         android:name="com.example.androidfinalproject.AddToFragment"
         android:label="Add Record"
-        tools:layout="@layout/fragment_add_to" />
+        tools:layout="@layout/fragment_add_to" >
+        <action
+            android:id="@+id/action_navigation_addTo_to_categoryFragment"
+            app:destination="@id/categoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="com.example.androidfinalproject.RecyclerView.CategoryFragment"
+        android:label="fragment_category"
+        tools:layout="@layout/fragment_category" />
 </navigation>

@@ -2,71 +2,147 @@ package com.example.androidfinalproject;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+import android.widget.Toast;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link AddToFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import com.example.androidfinalproject.ui.Pojo.Budget;
+
 public class AddToFragment extends Fragment {
 
     private Spinner spinner;
+    private EditText dateInput;
+    private EditText accountNumInput;
+    private Spinner categoriesSpinner;
+    private EditText amountInput;
+    private EditText notesInput;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    public static final int UPDATE = 1;
+    public static final int CREATE = 2;
+    public static final String BUDGET = "budget";
+    public static final String ACTION_TYPE = "action_type";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    Budget budget;
 
     public AddToFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment AddToFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static AddToFragment newInstance(String param1, String param2) {
+    public static AddToFragment newInstance(Budget budget, int actionType) {
         AddToFragment fragment = new AddToFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+        args.putParcelable(BUDGET, budget);
+        args.putInt(ACTION_TYPE, actionType);
         fragment.setArguments(args);
         return fragment;
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
-
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_add_to, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_add_to, container, false);
+
+        if (getArguments() != null) {
+            int actionType = getArguments().getInt(ACTION_TYPE);
+            if (actionType == UPDATE) {
+                // Handle update scenario
+            } else if (actionType == CREATE) {
+                // Handle create scenario
+            }
+        }
+
+        dateInput = view.findViewById(R.id.editTextDate);
+        accountNumInput = view.findViewById(R.id.account_num);
+        categoriesSpinner = view.findViewById(R.id.spinner);
+        amountInput = view.findViewById(R.id.amount);
+        notesInput = view.findViewById(R.id.notes);
+
+        Button saveButton = view.findViewById(R.id.save);
+
+
+        if (getArguments() != null) {
+
+            // If the user wants to update a location
+            if (getArguments().getInt(ACTION_TYPE) == UPDATE) {
+                saveButton.setText("Update");
+
+                // Read the location
+                budget = getArguments().getParcelable(BUDGET);
+
+                // populate the current locations value into the respective fields
+                dateInput.setText(budget.getDate());
+                accountNumInput.setText(budget.getAccountNum());
+                categoriesSpinner.setAdapter(categoriesSpinner.getAdapter());
+                amountInput.setText((int) budget.getAmount());
+                notesInput.setText(budget.getNotes());
+            } else {
+                budget = new Budget();
+                saveButton.setText("Add Recored");
+            }
+
+            saveButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    NavController navController = Navigation.findNavController(v);
+                    navController.navigate(R.id.action_navigation_addTo_to_categoryFragment);
+
+
+                    budget.setDate(dateInput.getText().toString());
+                    budget.setAccountNum(accountNumInput.getText().toString());
+                    budget.setCategory(categoriesSpinner.getSelectedItem().toString());
+                    budget.setAmount(Double.parseDouble(amountInput.getText().toString()));
+                    budget.setNotes(notesInput.getText().toString());
+
+
+                    // Create a new DatabaseLocation object
+                    Budget newRecord = new Budget();
+                    newRecord.setDate(dateInput.getText().toString());
+                    newRecord.setAccountNum(accountNumInput.getText().toString());
+                    newRecord.setCategory(categoriesSpinner.getSelectedItem().toString());
+                    newRecord.setAmount(Double.parseDouble(amountInput.getText().toString()));
+                    newRecord.setNotes(notesInput.getText().toString());
+
+                    // program the submit button to set the
+                    //values of the location and either update or insert the
+                    //location into the database
+                    BudgetDatabase db = new BudgetDatabase(getContext());
+                    assert getArguments() != null;
+                    if(getArguments().getInt( ACTION_TYPE ) == UPDATE) {
+                        db.addBudgetExpense(budget);
+                    } else if(getArguments().getInt( ACTION_TYPE ) == CREATE) {
+                        db.addBudgetExpense(budget);
+                    }
+                    db.close();
+                    Navigation.findNavController(view).popBackStack();
+
+                }
+            });
+        }
+        return view;
     }
+
+
+
+//            // Show a successful save message
+//            Toast.makeText(getContext(), "Budget saved!", Toast.LENGTH_SHORT).show();
+//
+//            // Go back to the previous fragment
+//            getParentFragmentManager().popBackStack();
+
+
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -84,7 +160,6 @@ public class AddToFragment extends Fragment {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         // Apply the adapter to the spinner
-        spinner.setAdapter(adapter);
+        categoriesSpinner.setAdapter(adapter);
     }
-
 }
