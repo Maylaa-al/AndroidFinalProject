@@ -2,6 +2,24 @@
 <PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <PreferenceCategory
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        app:icon="@drawable/baseline_info_24"
+        app:title="@string/personal_header">
+
+        <EditTextPreference
+            app:defaultValue=""
+            app:key="name"
+            app:title="Name"
+            app:useSimpleSummaryProvider="true" />
+
+        <EditTextPreference
+            app:defaultValue=""
+            app:key="email"
+            app:title="Email"
+            app:useSimpleSummaryProvider="true" />
+    </PreferenceCategory>
+    <PreferenceCategory
         app:icon="@drawable/ic_baseline_message_24"
         app:title="@string/messages_header">
 
@@ -54,5 +72,11 @@
             app:summaryOff="You will receive all notifications"/>
     </PreferenceCategory>
 
+    <PreferenceCategory
+        app:icon="@drawable/baseline_api_24"
+        app:title="@string/api_header">
+
+
+    </PreferenceCategory>
 
 </PreferenceScreen>
