@@ -9,71 +9,114 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="167dp"
-        android:layout_height="53dp"
-        android:layout_marginEnd="250dp"
-        android:layout_marginBottom="668dp"
-        android:background="@color/material_on_background_disabled"
-        android:drawableStart="@drawable/baseline_keyboard_arrow_left_24"
-        android:paddingStart="10dp"
-        android:paddingEnd="30dp"
-        android:text="@string/statistics_button"
-        android:textAlignment="center"
-        android:textColor="#F9FBE7"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="348dp"
+        android:layout_height="147dp"
+        android:layout_margin="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        app:cardBackgroundColor="#44AAD7"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/cardView3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <ScrollView
-        android:layout_width="409dp"
-        android:layout_height="635dp"
-        tools:layout_editor_absoluteX="38dp"
-        tools:layout_editor_absoluteY="162dp" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <FrameLayout
-        android:id="@+id/frameLayoutLineGraph"
-        android:layout_width="335dp"
-        android:layout_height="393dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginEnd="36dp"
-        android:layout_marginBottom="50dp"
-        android:background="@drawable/linegraph_background_statistics"
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="95dp"
+                android:layout_height="27dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:drawableLeft="@drawable/baseline_attach_money_24"
+                android:fontFamily="@font/acme"
+                android:paddingEnd="5dp"
+                android:text="45.375"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="144dp"
+                android:layout_height="18dp"
+                android:layout_marginStart="71dp"
+                android:layout_marginBottom="36dp"
+                android:drawableLeft="@drawable/baseline_arrow_drop_up_24"
+                android:text="17.75% this week"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/button3"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView3"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="23dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/acme"
+                android:text="Card # 4587"
+                android:textColor="#90FFFFFF"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="99dp"
+                android:layout_height="38dp"
+                android:layout_gravity="bottom|end"
+                android:layout_marginStart="72dp"
+                android:layout_marginTop="93dp"
+                android:layout_marginEnd="72dp"
+                android:background="@drawable/button_gradient"
+                android:text="@string/history_button"
+                android:textColor="#FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView17"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView3"
+        android:layout_width="344dp"
+        android:layout_height="396dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        app:cardBackgroundColor="#25447B"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayoutCardView">
+        app:layout_constraintTop_toBottomOf="@+id/cardView">>
 
+        <org.eazegraph.lib.charts.ValueLineChart
+            android:id="@+id/linechart"
+            android:layout_width="314dp"
+            android:layout_height="384dp"
+            android:layout_marginLeft="15dp"
+            android:layout_weight="1"
+            android:padding="6dp"
 
-    </FrameLayout>
+            />
+    </androidx.cardview.widget.CardView>
 
-    <FrameLayout
-        android:id="@+id/frameLayoutCardView"
-        android:layout_width="339dp"
-        android:layout_height="171dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="29dp"
-        android:layout_marginEnd="36dp"
-        android:layout_marginBottom="30dp"
-        android:background="@drawable/rectangle_background_statistics"
-        app:layout_constraintBottom_toTopOf="@+id/frameLayoutLineGraph"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button">
-
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="wrap_content"
-            android:layout_height="33dp"
-            android:layout_gravity="bottom|end"
-            android:layout_marginEnd="15dp"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/history_button_drawable"
-            android:text="@string/history_button"
-            android:textColor="#FFFFFF" />
-    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
