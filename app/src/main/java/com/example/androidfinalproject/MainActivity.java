@@ -48,7 +48,10 @@ public class MainActivity extends AppCompatActivity {
         binding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navController.navigate(R.id.navigation_addTo);
+                Bundle extra = new Bundle();
+                extra.putInt(AddToFragment.ACTION_TYPE,
+                        AddToFragment.CREATE);
+                navController.navigate(R.id.navigation_addTo, extra);
 
             }
         });

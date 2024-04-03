@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -52,9 +53,10 @@ public class AddToFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_add_to, container, false);
+
 
         if (getArguments() != null) {
+            Log.d("budget", "Got here: ");
             int actionType = getArguments().getInt(ACTION_TYPE);
             if (actionType == UPDATE) {
                 // Handle update scenario
@@ -63,6 +65,8 @@ public class AddToFragment extends Fragment {
             }
         }
 
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.fragment_add_to, container, false);
         dateInput = view.findViewById(R.id.editTextDate);
         accountNumInput = view.findViewById(R.id.account_num);
         categoriesSpinner = view.findViewById(R.id.spinner);
@@ -73,6 +77,7 @@ public class AddToFragment extends Fragment {
 
 
         if (getArguments() != null) {
+
 
             // If the user wants to update a location
             if (getArguments().getInt(ACTION_TYPE) == UPDATE) {
@@ -87,50 +92,47 @@ public class AddToFragment extends Fragment {
                 categoriesSpinner.setAdapter(categoriesSpinner.getAdapter());
                 amountInput.setText((int) budget.getAmount());
                 notesInput.setText(budget.getNotes());
-            } else {
+
+
+            }
+            else {
                 budget = new Budget();
                 saveButton.setText("Add Recored");
             }
 
+        }
             saveButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    Log.d("MYAPP", "onClick: button clicked");
 
-                    NavController navController = Navigation.findNavController(v);
-                    navController.navigate(R.id.action_navigation_addTo_to_categoryFragment);
-
-
+                    // Create a new DatabaseLocation object
+                   // Budget newRecord = new Budget();
                     budget.setDate(dateInput.getText().toString());
                     budget.setAccountNum(accountNumInput.getText().toString());
                     budget.setCategory(categoriesSpinner.getSelectedItem().toString());
                     budget.setAmount(Double.parseDouble(amountInput.getText().toString()));
                     budget.setNotes(notesInput.getText().toString());
 
-
-                    // Create a new DatabaseLocation object
-                    Budget newRecord = new Budget();
-                    newRecord.setDate(dateInput.getText().toString());
-                    newRecord.setAccountNum(accountNumInput.getText().toString());
-                    newRecord.setCategory(categoriesSpinner.getSelectedItem().toString());
-                    newRecord.setAmount(Double.parseDouble(amountInput.getText().toString()));
-                    newRecord.setNotes(notesInput.getText().toString());
-
                     // program the submit button to set the
                     //values of the location and either update or insert the
                     //location into the database
                     BudgetDatabase db = new BudgetDatabase(getContext());
-                    assert getArguments() != null;
-                    if(getArguments().getInt( ACTION_TYPE ) == UPDATE) {
-                        db.addBudgetExpense(budget);
-                    } else if(getArguments().getInt( ACTION_TYPE ) == CREATE) {
+//                    assert getArguments() != null;
+                    if (getArguments().getInt(ACTION_TYPE) == UPDATE) {
+                        db.updateBudgetExpense(budget);
+                    } else if (getArguments().getInt(ACTION_TYPE) == CREATE) {
                         db.addBudgetExpense(budget);
                     }
+
                     db.close();
-                    Navigation.findNavController(view).popBackStack();
+                    NavController navController = Navigation.findNavController(v);
+                    navController.navigate(R.id.action_navigation_addTo_to_categoryFragment);
+                    // Navigation.findNavController(view).popBackStack();
 
                 }
             });
-        }
+
         return view;
     }
 

@@ -39,7 +39,7 @@ public class BudgetDatabase extends SQLiteOpenHelper {
     // Transactions table
     public static final String TABLE_TRANSACTIONS = "transactions";
     public static final String COLUMN_TRANS_DATE = "trans_date";
-    public static final String COLUMN_ACCOUNT_NUM = "account_num";
+    public static final String COLUMN_ACCOUNT_NUM = "accountNum";
     public static final String COLUMN_AMOUNT = "amount";
     public static final String COLUMN_NOTES = "notes";
         // Create transactions table
