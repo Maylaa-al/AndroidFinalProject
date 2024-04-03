@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
     tools:context=".MainActivity">
 
 
@@ -23,10 +22,11 @@
         android:id="@+id/bottomAppBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#FFFFFF"
         android:layout_gravity="bottom"
         app:fabCradleMargin="20dp"
-        app:fabCradleVerticalOffset="10dp"
-        app:fabCradleRoundedCornerRadius="50dp">
+        app:fabCradleRoundedCornerRadius="50dp"
+        app:fabCradleVerticalOffset="10dp">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/nav_View"
@@ -41,9 +41,11 @@
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/baseline_add_24"
+        app:backgroundTint="#FFFFFF"
+        app:elevation="20dp"
         app:layout_anchor="@+id/bottomAppBar"
-        app:layout_anchorGravity="top|center" />
+        app:layout_anchorGravity="top|center"
+        app:maxImageSize="30dp" />
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

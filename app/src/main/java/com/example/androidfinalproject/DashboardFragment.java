@@ -3,17 +3,20 @@ package com.example.androidfinalproject;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link MySpendFragment#newInstance} factory method to
+ * Use the {@link DashboardFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class MySpendFragment extends Fragment {
+public class DashboardFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +27,7 @@ public class MySpendFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public MySpendFragment() {
+    public DashboardFragment() {
         // Required empty public constructor
     }
 
@@ -34,11 +37,11 @@ public class MySpendFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment MySpendFragment.
+     * @return A new instance of fragment DashboardFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static MySpendFragment newInstance(String param1, String param2) {
-        MySpendFragment fragment = new MySpendFragment();
+    public static DashboardFragment newInstance(String param1, String param2) {
+        DashboardFragment fragment = new DashboardFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -59,7 +62,15 @@ public class MySpendFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_my_spend, container, false);
+        View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
+        ImageButton mySpend = view.findViewById(R.id.my_spend);
+        mySpend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                    Navigation.findNavController(v).navigate(R.id.action_navigation_dashboard_to_categoryFragment);
+            }
+        });
         return view;
     }
 }
