@@ -50,7 +50,7 @@
                     android:paddingBottom="35dp">
 
                     <ImageButton
-                        android:id="@+id/imageButton6"
+                        android:id="@+id/my_spend"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="61dp"
@@ -78,7 +78,7 @@
                         app:layout_constraintBottom_toTopOf="@+id/imageButton9"
                         app:layout_constraintEnd_toStartOf="@+id/textView14"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/imageButton6" />
+                        app:layout_constraintTop_toBottomOf="@+id/my_spend" />
 
                     <ImageButton
                         android:id="@+id/imageButton7"
@@ -92,7 +92,7 @@
                         android:src="@drawable/education"
                         app:layout_constraintBottom_toTopOf="@+id/textView14"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/imageButton6"
+                        app:layout_constraintStart_toEndOf="@+id/my_spend"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
@@ -152,7 +152,7 @@
                         app:layout_constraintBottom_toTopOf="@+id/textView13"
                         app:layout_constraintEnd_toStartOf="@+id/imageButton8"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/imageButton6" />
+                        app:layout_constraintTop_toBottomOf="@+id/my_spend" />
 
                     <TextView
                         android:id="@+id/textView11"

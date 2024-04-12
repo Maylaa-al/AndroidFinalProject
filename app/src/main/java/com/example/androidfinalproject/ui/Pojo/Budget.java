@@ -19,7 +19,11 @@ public class Budget implements Parcelable {
     private double amount;
     private String notes;
 
+
+// Create object to read from the database
+
     // Create object to read from the database
+
     public Budget(int id, Double price, String fromCurrency, String toCurrency, String date) {
         this.id = id;
         this.price = price;
@@ -27,13 +31,15 @@ public class Budget implements Parcelable {
         this.toCurrency = toCurrency;
         this.date = date;
     }
-
+// Create record in the database
     public Budget(Double price, String fromCurrency, String toCurrency, String date) {
         this.price = price;
         this.fromCurrency = fromCurrency;
         this.toCurrency = toCurrency;
         this.date = date;
     }
+
+// Read from the database
 
     public Budget(int id, String date, String accountNum, String category, double amount, String notes) {
         this.id = id;
@@ -179,4 +185,5 @@ public class Budget implements Parcelable {
 
 
 
-}
+    }
+
