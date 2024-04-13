@@ -1,3 +1,4 @@
+
 <resources>
     <string name="app_name">AndroidFinalProject</string>
     <string name="title_home">Home</string>
@@ -31,4 +32,5 @@
     <!-- Api Preferences -->
     <string name="api_header">API</string>
     <string name="currency_title">Currency</string>
+
 </resources>
