@@ -177,7 +177,4 @@ public class Budget implements Parcelable {
             return new Budget[size];
         }
     };
-
-
-
 }

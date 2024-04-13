@@ -90,7 +90,7 @@ public class AddToFragment extends Fragment {
                 dateInput.setText(budget.getDate());
                 accountNumInput.setText(budget.getAccountNum());
                 categoriesSpinner.setAdapter(categoriesSpinner.getAdapter());
-                amountInput.setText((int) budget.getAmount());
+                amountInput.setText(String.valueOf((int) budget.getAmount()));
                 notesInput.setText(budget.getNotes());
 
 

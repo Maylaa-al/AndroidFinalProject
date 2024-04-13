@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -57,7 +58,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
     @NonNull
     @Override
     public CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_category, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_add_to, parent, false);
         return new CustomViewHolder(view);
     }
 
@@ -68,7 +69,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
         protected EditText amount;
         protected EditText notes;
         protected ImageView delete;
-        protected ImageView edit;
+        protected Button edit;
 
         public CustomViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -77,8 +78,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
             this.amount = itemView.findViewById(R.id.amount);
             this.notes = itemView.findViewById(R.id.notes);
             this.categoriesSpinner = itemView.findViewById(R.id.spinner);
-            this.delete = itemView.findViewById(R.id.delete_btn);
-            this.edit = itemView.findViewById(R.id.edit_btn);
+           // this.delete = itemView.findViewById(R.id.delete_btn);
+            this.edit = itemView.findViewById(R.id.save);
             itemView.setOnClickListener(this);
         }
 
@@ -96,7 +97,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
 
         holder.date.setText(budget.getDate());
         holder.accountNumber.setText(budget.getAccountNum());
-        holder.amount.setText((int) budget.getAmount());
+        holder.amount.setText(String.valueOf((int) budget.getAmount()));
         holder.notes.setText(budget.getNotes());
 
         // Edit records
@@ -111,28 +112,28 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
         });
 
         // Delete records
-        holder.delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Show confirmation dialog
-                new AlertDialog.Builder(context)
-                        .setTitle("Delete")
-                        .setMessage("Are you sure you want to delete " + budgets.get(holder.getAdapterPosition()).getNotes() + "?")
-                        .setIcon(android.R.drawable.ic_dialog_alert)
-                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                BudgetDatabase db = new BudgetDatabase(context);
-                                db.deleteBudgetExpense(budgets.get(holder.getAdapterPosition()).getId());
-                                budgets.remove(holder.getAdapterPosition());
-                                notifyItemRemoved(holder.getAdapterPosition());
-                                db.close();
-                            }
-                        })
-                        .setNegativeButton("No", null)
-                        .show();
-            }
-        });
+//        holder.delete.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                // Show confirmation dialog
+//                new AlertDialog.Builder(context)
+//                        .setTitle("Delete")
+//                        .setMessage("Are you sure you want to delete " + budgets.get(holder.getAdapterPosition()).getNotes() + "?")
+//                        .setIcon(android.R.drawable.ic_dialog_alert)
+//                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+//                            @Override
+//                            public void onClick(DialogInterface dialog, int which) {
+//                                BudgetDatabase db = new BudgetDatabase(context);
+//                                db.deleteBudgetExpense(budgets.get(holder.getAdapterPosition()).getId());
+//                                budgets.remove(holder.getAdapterPosition());
+//                                notifyItemRemoved(holder.getAdapterPosition());
+//                                db.close();
+//                            }
+//                        })
+//                        .setNegativeButton("No", null)
+//                        .show();
+//            }
+//        });
     //}
 
 

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fragment_background"
+    tools:context=".MySpendFragment">
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="100dp"
+        android:fontFamily="@font/acme"
+        android:text="Catgories"
+        android:textColor="#F6F4F4"
+        android:textSize="48sp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="829dp"
+        android:paddingBottom="100dp"
+        tools:ignore="SpeakableTextPresentCheck">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView3"
+                android:layout_width="match_parent"
+                android:layout_height="825dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="150dp"
+                android:layout_marginEnd="50dp"
+                app:cardBackgroundColor="#25447B"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="766dp"
+                    android:paddingBottom="35dp">
+
+                    <ImageButton
+                        android:id="@+id/my_spend"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:backgroundTint="@android:color/transparent"
+                        android:elevation="0dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/household"
+                        app:layout_constraintBottom_toTopOf="@+id/textView9"
+                        tools:layout_editor_absoluteX="137dp" />
+
+                    <TextView
+                        android:id="@+id/textView9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/acme"
+                        android:text="HouseHold"
+                        android:textColor="#F6F4F4"
+                        tools:layout_editor_absoluteX="170dp"
+                        tools:layout_editor_absoluteY="210dp" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="100dp"
+                        android:layout_marginBottom="15dp"
+                        android:backgroundTint="@android:color/transparent"
+                        android:src="@drawable/education"
+                        app:layout_constraintBottom_toTopOf="@+id/textView14"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:layout_editor_absoluteX="672dp" />
+
+                    <TextView
+                        android:id="@+id/textView10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="44dp"
+                        android:fontFamily="@font/acme"
+                        android:text="Apparel"
+                        android:textColor="#F6F4F4"
+                        app:layout_constraintTop_toBottomOf="@+id/imageButton11"
+                        tools:layout_editor_absoluteX="729dp" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="100dp"
+                        android:layout_marginEnd="103dp"
+                        android:backgroundTint="@android:color/transparent"
+                        android:src="@drawable/health"
+                        app:layout_constraintBottom_toTopOf="@+id/textView11"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="122dp"
+                        android:fontFamily="@font/acme"
+                        android:text="Beauty"
+                        android:textColor="#F6F4F4"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageButton10"
+                        app:layout_constraintVertical_bias="0.06" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@android:color/transparent"
+                        android:src="@drawable/food"
+                        tools:layout_editor_absoluteX="391dp"
+                        tools:layout_editor_absoluteY="86dp" />
+
+                    <TextView
+                        android:id="@+id/textView11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="28dp"
+                        android:layout_marginBottom="45dp"
+                        android:fontFamily="@font/acme"
+                        android:text="Health"
+                        android:textColor="#F6F4F4"
+                        app:layout_constraintBottom_toTopOf="@+id/imageButton12"
+                        app:layout_constraintTop_toBottomOf="@+id/imageButton8"
+                        tools:layout_editor_absoluteX="990dp" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton10"
+                        android:layout_width="135dp"
+                        android:layout_height="106dp"
+                        android:backgroundTint="@android:color/transparent"
+                        android:src="@drawable/beauty"
+                        tools:layout_editor_absoluteX="122dp"
+                        tools:layout_editor_absoluteY="299dp" />
+
+                    <TextView
+                        android:id="@+id/textView13"
+                        android:layout_width="0dp"
+                        android:layout_height="14dp"
+                        android:layout_marginTop="28dp"
+                        android:fontFamily="@font/acme"
+                        android:text="Food"
+                        android:textColor="#F6F4F4"
+                        app:layout_constraintTop_toBottomOf="@+id/imageButton9"
+                        tools:layout_editor_absoluteX="477dp" />
+
+                    <TextView
+                        android:id="@+id/textView14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="28dp"
+                        android:layout_marginBottom="100dp"
+                        android:fontFamily="@font/acme"
+                        android:text="Education"
+                        android:textColor="#F6F4F4"
+                        app:layout_constraintBottom_toTopOf="@+id/imageButton11"
+                        app:layout_constraintTop_toBottomOf="@+id/imageButton7"
+                        tools:layout_editor_absoluteX="729dp" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="100dp"
+                        android:backgroundTint="@android:color/transparent"
+                        android:src="@drawable/apparel"
+                        app:layout_constraintTop_toBottomOf="@+id/textView14"
+                        tools:layout_editor_absoluteX="672dp" />
+
+                    <TextView
+                        android:id="@+id/textView15"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="12dp"
+                        android:fontFamily="@font/acme"
+                        android:text="Gas"
+                        android:textColor="#F6F4F4"
+                        app:layout_constraintTop_toBottomOf="@+id/imageButton12"
+                        tools:layout_editor_absoluteX="1012dp" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:backgroundTint="@android:color/transparent"
+                        android:src="@drawable/cultural"
+                        tools:layout_editor_absoluteX="399dp"
+                        tools:layout_editor_absoluteY="299dp" />
+
+                    <TextView
+                        android:id="@+id/textView16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/acme"
+                        android:text="Cultural"
+                        android:textColor="#F6F4F4"
+                        tools:layout_editor_absoluteX="431dp"
+                        tools:layout_editor_absoluteY="423dp" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="100dp"
+                        android:layout_marginEnd="100dp"
+                        android:backgroundTint="@android:color/transparent"
+                        android:src="@drawable/gas"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>
