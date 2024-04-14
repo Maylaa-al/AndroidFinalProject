@@ -1,4 +1,4 @@
-[featuredimage](https://github.com/Maylaa-al/AndroidFinalProject/assets/91930360/450692f1-335e-4ec1-86ff-812694dc3445)
+![featuredimage](https://github.com/Maylaa-al/AndroidFinalProject/assets/91930360/450692f1-335e-4ec1-86ff-812694dc3445)
 
 Title: Spender
 
