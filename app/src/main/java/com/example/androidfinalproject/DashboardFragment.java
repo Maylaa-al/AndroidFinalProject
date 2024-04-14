@@ -1,5 +1,7 @@
 package com.example.androidfinalproject;
 
+import static android.content.Intent.getIntent;
+
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,7 +11,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
+
+import com.example.androidfinalproject.ui.Pojo.Budget;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -26,6 +34,7 @@ public class DashboardFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private Budget budget;
 
     public DashboardFragment() {
         // Required empty public constructor
@@ -64,6 +73,11 @@ public class DashboardFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
         ImageButton mySpend = view.findViewById(R.id.my_spend);
+
+        TextView textview = view.findViewById(R.id.textView3);
+        BudgetDatabase db = new BudgetDatabase(getContext());
+
+        textview.setText(db.getAllBudgetExpense(budget.getAmount()).toString());
         mySpend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

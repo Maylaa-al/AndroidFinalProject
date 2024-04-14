@@ -128,7 +128,7 @@ public class BudgetDatabase extends SQLiteOpenHelper {
         return budget;
     }
 
-    public ArrayList<Budget> getAllBudgetExpense() {
+    public ArrayList<Budget> getAllBudgetExpense(double amount) {
         SQLiteDatabase db = this.getReadableDatabase();
         ArrayList<Budget> budgetExpense = new ArrayList<>();
         Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_TRANSACTIONS, null);

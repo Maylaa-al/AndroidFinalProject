@@ -67,7 +67,7 @@ public class CategoryFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_category, container, false);
         RecyclerView recyclerView = view.findViewById(R.id.savedInfo);
         BudgetDatabase db = new BudgetDatabase(getContext());
-        CustomAdapter adapter = new CustomAdapter(db.getAllBudgetExpense(), getContext());
+        CustomAdapter adapter = new CustomAdapter(db.getAllBudgetExpense(budget.getAmount()), getContext());
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         return view;

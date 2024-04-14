@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/navigation_home">
+    app:startDestination="@id/settingFragment">
 
     <fragment
         android:id="@+id/navigation_home"
@@ -45,4 +45,9 @@
         android:name="com.example.androidfinalproject.RecyclerView.CategoryFragment"
         android:label="fragment_category"
         tools:layout="@layout/fragment_category" />
+
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.example.androidfinalproject.SettingsFragment"
+        android:label="fragment_settings" />
 </navigation>
