@@ -1,3 +1,5 @@
+![featuredimage](https://github.com/Maylaa-al/AndroidFinalProject/assets/91930360/450692f1-335e-4ec1-86ff-812694dc3445)
+
 Title: Spender
 
 Description: Spender is a financial management software to track your spending and savings so that you can make the ultimate decision whether to spend more or spend less depending on your budget that is shown by the app. The app also shows you a line graph that reflects how much you have spent and will show you how much you have left. This spender financial software will also show you your limit on each credit card that is registered on the app.
