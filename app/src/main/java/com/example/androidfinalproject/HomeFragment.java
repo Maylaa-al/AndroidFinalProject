@@ -73,14 +73,14 @@ public class HomeFragment extends Fragment {
         ((MainActivity) getActivity()).showBottomNavigation(false);
 
         // Navigate to dashboard when clicking start button
-        Button startButton = view.findViewById(R.id.start_button);
-        startButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.action_navigation_home_to_navigation_dashboard);
-
-            }
-        });
+//        Button startButton = view.findViewById(R.id.start_button);
+//        startButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Navigation.findNavController(view).navigate(R.id.action_navigation_home_to_navigation_dashboard);
+//
+//            }
+//        });
 
 
         return view;

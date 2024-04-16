@@ -13,6 +13,15 @@
         <action
             android:id="@+id/action_navigation_home_to_navigation_dashboard"
             app:destination="@id/navigation_dashboard" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_myspend"
+            app:destination="@id/navigation_myspend" />
+        <action
+            android:id="@+id/action_navigation_home_to_statisticsFragment"
+            app:destination="@id/navigation_statistics" />
+        <action
+            android:id="@+id/action_navigation_home_to_categoryFragment"
+            app:destination="@id/navigation_categories" />
     </fragment>
 
     <fragment
@@ -22,7 +31,7 @@
         tools:layout="@layout/fragment_dashboard" >
         <action
             android:id="@+id/action_navigation_dashboard_to_categoryFragment"
-            app:destination="@id/categoryFragment" />
+            app:destination="@id/navigation_categories" />
         <action
             android:id="@+id/action_navigation_dashboard_to_VPHostFragment"
             app:destination="@id/VPHostFragment" />
@@ -41,21 +50,25 @@
         tools:layout="@layout/fragment_add_to" >
         <action
             android:id="@+id/action_navigation_addTo_to_categoryFragment"
-            app:destination="@id/categoryFragment" />
+            app:destination="@id/navigation_categories" />
     </fragment>
     <fragment
-        android:id="@+id/categoryFragment"
+        android:id="@+id/navigation_categories"
         android:name="com.example.androidfinalproject.RecyclerView.CategoryFragment"
         android:label="Saved Recoreds"
         tools:layout="@layout/fragment_category" />
-
     <fragment
-        android:id="@+id/settingFragment"
-        android:name="com.example.androidfinalproject.SettingsFragment"
-        android:label="fragment_settings" />
+        android:id="@+id/navigation_statistics"
+        android:name="com.example.androidfinalproject.StatisticsFragment"
+        android:label="fragment_statistics"
+        tools:layout="@layout/fragment_statistics" />
     <fragment
         android:id="@+id/VPHostFragment"
         android:name="com.example.androidfinalproject.viewPager2.VPHostFragment"
-        android:label="fragment_v_p_host"
+        android:label="Stored Cards"
         tools:layout="@layout/fragment_v_p_host" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.androidfinalproject.SettingsFragment"
+        android:label="SettingsFragment" />
 </navigation>
