@@ -82,8 +82,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
             this.savedAmount = itemView.findViewById(R.id.saved_amount);
             this.notes = itemView.findViewById(R.id.editTextTextMultiLine);
             //this.categoriesSpinner = itemView.findViewById(R.id.spinner);
-            // this.delete = itemView.findViewById(R.id.delete_btn);
-            this.edit = itemView.findViewById(R.id.save);
+            this.delete = itemView.findViewById(R.id.delete_btn);
+            this.edit = itemView.findViewById(R.id.edit_btn);
             itemView.setOnClickListener(this);
         }
 
@@ -105,39 +105,39 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
         holder.notes.setText(budget.getNotes());
 
         // Edit records
-//        holder.edit.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Bundle extra = new Bundle();
-//                extra.putInt(AddToFragment.ACTION_TYPE, AddToFragment.UPDATE);
-//                extra.putParcelable(AddToFragment.BUDGET, budgets.get(holder.getLayoutPosition()));
-//                Navigation.findNavController(v).navigate(R.id.navigation_addTo, extra);
-//            }
-//        });
+        holder.edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle extra = new Bundle();
+                extra.putInt(AddToFragment.ACTION_TYPE, AddToFragment.UPDATE);
+                extra.putParcelable(AddToFragment.BUDGET, budgets.get(holder.getLayoutPosition()));
+                Navigation.findNavController(v).navigate(R.id.navigation_addTo, extra);
+            }
+        });
 
         // Delete records
-//        holder.delete.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                // Show confirmation dialog
-//                new AlertDialog.Builder(context)
-//                        .setTitle("Delete")
-//                        .setMessage("Are you sure you want to delete " + budgets.get(holder.getAdapterPosition()).getNotes() + "?")
-//                        .setIcon(android.R.drawable.ic_dialog_alert)
-//                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-//                            @Override
-//                            public void onClick(DialogInterface dialog, int which) {
-//                                BudgetDatabase db = new BudgetDatabase(context);
-//                                db.deleteBudgetExpense(budgets.get(holder.getAdapterPosition()).getId());
-//                                budgets.remove(holder.getAdapterPosition());
-//                                notifyItemRemoved(holder.getAdapterPosition());
-//                                db.close();
-//                            }
-//                        })
-//                        .setNegativeButton("No", null)
-//                        .show();
-//            }
-//        });
+        holder.delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Show confirmation dialog
+                new AlertDialog.Builder(context)
+                        .setTitle("Delete")
+                        .setMessage("Are you sure you want to delete " + budgets.get(holder.getAdapterPosition()).getNotes() + "?")
+                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                BudgetDatabase db = new BudgetDatabase(context);
+                                db.deleteBudgetExpense(budgets.get(holder.getAdapterPosition()).getId());
+                                budgets.remove(holder.getAdapterPosition());
+                                notifyItemRemoved(holder.getAdapterPosition());
+                                db.close();
+                            }
+                        })
+                        .setNegativeButton("No", null)
+                        .show();
+            }
+        });
     //}
 
 
