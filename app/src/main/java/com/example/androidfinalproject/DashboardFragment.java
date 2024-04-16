@@ -85,6 +85,15 @@ public class DashboardFragment extends Fragment {
                     Navigation.findNavController(v).navigate(R.id.action_navigation_dashboard_to_categoryFragment);
             }
         });
+
+        ImageButton myWallet = view.findViewById(R.id.my_wallet);
+        myWallet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.action_navigation_dashboard_to_VPHostFragment);
+
+            }
+        });
         return view;
     }
 }

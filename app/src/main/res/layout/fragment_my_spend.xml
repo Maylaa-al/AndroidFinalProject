@@ -62,7 +62,7 @@
                         android:scaleType="fitXY"
                         android:src="@drawable/household"
                         app:layout_constraintBottom_toTopOf="@+id/textView9"
-                        app:layout_constraintEnd_toStartOf="@+id/imageButton7"
+                        app:layout_constraintEnd_toStartOf="@+id/my_wallet"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -81,7 +81,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/my_spend" />
 
                     <ImageButton
-                        android:id="@+id/imageButton7"
+                        android:id="@+id/my_wallet"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="6dp"
@@ -122,7 +122,7 @@
                         app:layout_constraintBottom_toTopOf="@+id/textView11"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/imageButton9"
-                        app:layout_constraintTop_toBottomOf="@+id/imageButton7" />
+                        app:layout_constraintTop_toBottomOf="@+id/my_wallet" />
 
                     <TextView
                         android:id="@+id/textView12"
@@ -209,7 +209,7 @@
                         app:layout_constraintBottom_toTopOf="@+id/imageButton8"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/textView9"
-                        app:layout_constraintTop_toBottomOf="@+id/imageButton7" />
+                        app:layout_constraintTop_toBottomOf="@+id/my_wallet" />
 
                     <ImageButton
                         android:id="@+id/imageButton11"

@@ -23,6 +23,9 @@
         <action
             android:id="@+id/action_navigation_dashboard_to_categoryFragment"
             app:destination="@id/categoryFragment" />
+        <action
+            android:id="@+id/action_navigation_dashboard_to_VPHostFragment"
+            app:destination="@id/VPHostFragment" />
     </fragment>
 
     <fragment
@@ -43,11 +46,16 @@
     <fragment
         android:id="@+id/categoryFragment"
         android:name="com.example.androidfinalproject.RecyclerView.CategoryFragment"
-        android:label="fragment_category"
+        android:label="Saved Recoreds"
         tools:layout="@layout/fragment_category" />
 
     <fragment
         android:id="@+id/settingFragment"
         android:name="com.example.androidfinalproject.SettingsFragment"
         android:label="fragment_settings" />
+    <fragment
+        android:id="@+id/VPHostFragment"
+        android:name="com.example.androidfinalproject.viewPager2.VPHostFragment"
+        android:label="fragment_v_p_host"
+        tools:layout="@layout/fragment_v_p_host" />
 </navigation>
