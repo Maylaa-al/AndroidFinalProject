@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.navigation.Navigation;
@@ -55,30 +56,33 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
         return adapter;
     }
 
+
+    // Inflate the correct view
     @NonNull
     @Override
     public CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_add_to, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_view_item, parent, false);
         return new CustomViewHolder(view);
     }
 
+    // Populate the data to the corresponding ids in recycler_view_item
     class CustomViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        protected EditText date;
-        protected EditText accountNumber;
-        protected Spinner categoriesSpinner;
-        protected EditText amount;
+        protected TextView date;
+        protected TextView accountNumber;
+        //protected Spinner categoriesSpinner;
+        protected TextView savedAmount;
         protected EditText notes;
         protected ImageView delete;
         protected Button edit;
 
         public CustomViewHolder(@NonNull View itemView) {
             super(itemView);
-            this.date = itemView.findViewById(R.id.editTextDate);
-            this.accountNumber = itemView.findViewById(R.id.account_num);
-            this.amount = itemView.findViewById(R.id.amount);
-            this.notes = itemView.findViewById(R.id.notes);
-            this.categoriesSpinner = itemView.findViewById(R.id.spinner);
-           // this.delete = itemView.findViewById(R.id.delete_btn);
+            this.date = itemView.findViewById(R.id.date);
+            this.accountNumber = itemView.findViewById(R.id.account_number);
+            this.savedAmount = itemView.findViewById(R.id.saved_amount);
+            this.notes = itemView.findViewById(R.id.editTextTextMultiLine);
+            //this.categoriesSpinner = itemView.findViewById(R.id.spinner);
+            // this.delete = itemView.findViewById(R.id.delete_btn);
             this.edit = itemView.findViewById(R.id.save);
             itemView.setOnClickListener(this);
         }
@@ -97,19 +101,19 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
 
         holder.date.setText(budget.getDate());
         holder.accountNumber.setText(budget.getAccountNum());
-        holder.amount.setText(String.valueOf((int) budget.getAmount()));
+        holder.savedAmount.setText(String.valueOf((int) budget.getAmount()));
         holder.notes.setText(budget.getNotes());
 
         // Edit records
-        holder.edit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Bundle extra = new Bundle();
-                extra.putInt(AddToFragment.ACTION_TYPE, AddToFragment.UPDATE);
-                extra.putParcelable(AddToFragment.BUDGET, budgets.get(holder.getLayoutPosition()));
-                Navigation.findNavController(v).navigate(R.id.navigation_addTo, extra);
-            }
-        });
+//        holder.edit.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Bundle extra = new Bundle();
+//                extra.putInt(AddToFragment.ACTION_TYPE, AddToFragment.UPDATE);
+//                extra.putParcelable(AddToFragment.BUDGET, budgets.get(holder.getLayoutPosition()));
+//                Navigation.findNavController(v).navigate(R.id.navigation_addTo, extra);
+//            }
+//        });
 
         // Delete records
 //        holder.delete.setOnClickListener(new View.OnClickListener() {

@@ -77,7 +77,7 @@ public class DashboardFragment extends Fragment {
         TextView textview = view.findViewById(R.id.textView3);
         BudgetDatabase db = new BudgetDatabase(getContext());
 
-        textview.setText(db.getAllBudgetExpense(budget.getAmount()).toString());
+       // textview.setText(db.getAllBudgetExpense(budget.getAmount()).toString());
         mySpend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

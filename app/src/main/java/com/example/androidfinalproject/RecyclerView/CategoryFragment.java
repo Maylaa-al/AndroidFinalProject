@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 
 import com.example.androidfinalproject.BudgetDatabase;
 import com.example.androidfinalproject.R;
+import com.example.androidfinalproject.ui.Pojo.Budget;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -28,6 +29,8 @@ public class CategoryFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private Budget budget;
+
 
     public CategoryFragment() {
         // Required empty public constructor
