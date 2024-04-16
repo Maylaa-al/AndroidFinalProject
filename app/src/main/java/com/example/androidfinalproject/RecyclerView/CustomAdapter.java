@@ -78,7 +78,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
         public CustomViewHolder(@NonNull View itemView) {
             super(itemView);
             this.date = itemView.findViewById(R.id.date);
-            this.accountNumber = itemView.findViewById(R.id.account_number);
+            //this.accountNumber = itemView.findViewById(R.id.account_number);
             this.savedAmount = itemView.findViewById(R.id.saved_amount);
             this.notes = itemView.findViewById(R.id.editTextTextMultiLine);
             //this.categoriesSpinner = itemView.findViewById(R.id.spinner);
