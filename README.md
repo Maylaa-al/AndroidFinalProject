@@ -11,6 +11,23 @@ Prerequisites: You will need an Android device. No internet connection needed.
 
 Screen Shots:  https://github.com/Maylaa-al/AndroidFinalProject/issues/21
 
+![image 8](https://github.com/Maylaa-al/AndroidFinalProject/assets/123242347/8fbc085c-bc07-4a8e-94cc-8d9a518a76a8)
+
+![image 1](https://github.com/Maylaa-al/AndroidFinalProject/assets/123242347/58c4635e-d6a3-4937-b8e1-9baa5ea6b8ea)
+
+![image 4](https://github.com/Maylaa-al/AndroidFinalProject/assets/123242347/d317763f-3ca8-4fff-b65b-88303d7e5be6)
+
+![Screenshot 2024-04-17 140544 1](https://github.com/Maylaa-al/AndroidFinalProject/assets/123242347/c0baeca3-8c81-485c-8b4a-fa9a165607b2)
+
+![android 1](https://github.com/Maylaa-al/AndroidFinalProject/assets/123242347/3d0575fc-f527-4fda-9337-6cbdb91c6d3e)
+
+![image 3](https://github.com/Maylaa-al/AndroidFinalProject/assets/123242347/54ef632f-f2e6-4d43-a203-5b6f29997351)
+
+![android2 1 1](https://github.com/Maylaa-al/AndroidFinalProject/assets/123242347/15fb627e-431b-48bd-8d0b-c0e4bd9398db)
+
+![Screenshot 2024-04-17 140740 1](https://github.com/Maylaa-al/AndroidFinalProject/assets/123242347/fbf4b9cb-5e28-4358-8b51-d1d9d7bd40a6)
+
+
 Author: Stefan Marceta & Maylaa Alhussami
 
 License: 2024 SMarceta & MAlhussami
